@@ -1,13 +1,5 @@
-import { gql } from "@apollo/client";
-import { useQuery } from "@apollo/react-hooks";
-
-const GET_GREETING = gql`
-  query GetGreeting($language: String!) {
-    greeting(language: $language) {
-      message
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { GET_GREETING } from "./queries";
 
 const useQueryExample = () => {
   const { loading, error, data } = useQuery(GET_GREETING, {
